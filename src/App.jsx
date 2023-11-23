@@ -10,7 +10,6 @@ function App() {
   return (
     <>
       <TaskForm />
-      {/* como hacer push */}
       <TaskList />
     </>
   )
