@@ -35,7 +35,7 @@ function TaskForm() {
     const elemento=temp.find(item =>item.id === id)
     elemento.tarea=tarea
 
-    setListadoTareas(tarea)
+    setListadoTareas(temp)
   }
     function onBorrarTarea(id){
       const temp=listadoTareas.filter(item=> item.id != id)
