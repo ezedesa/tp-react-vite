@@ -7,7 +7,7 @@
   
 }
 body{
-  background: #444440;
+  background: #404344;
   animation: myback 10s infinite both;
 }
 @keyframes myback {
