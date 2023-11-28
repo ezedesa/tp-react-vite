@@ -11,9 +11,9 @@ body{
   animation: myback 10s infinite both;
 }
 @keyframes myback {
-  0% {background-image: linear-gradient(rgba(0, 247, 255, 0.5), rgba(255, 255, 0, 0.5));}
+  0% {background-image: linear-gradient(rgba(0, 247, 255, 0.5), rgb(209, 209, 42));}
   50% {background-color: rgb(0, 132, 255);}
-  100% {background-image: linear-gradient(rgba(0, 247, 255, 0.5), rgba(255, 255, 0, 0.5));}
+  100% {background-image: linear-gradient(rgba(0, 247, 255, 0.5), rgb(209, 209, 42));}
 
 }
 .btn{
