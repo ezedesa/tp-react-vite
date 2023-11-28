@@ -31,8 +31,8 @@ export const TaskItem = ({ id, nombre, completado, actualizarTarea, eliminarTare
 
   return (
     <>
-      <div class="row">
-        <div class="col-9">
+      <div className="row">
+        <div className="col-9">
           <Form className='d-flex justify-content-start'>
             <Form.Check
               type='switch'
@@ -43,11 +43,11 @@ export const TaskItem = ({ id, nombre, completado, actualizarTarea, eliminarTare
               checked={estado} />
             {/* Si el estado es verdadero, la tarea aparecera tachada */}
             {estado ? <p class="text-decoration-line-through ms-2"> {nombre}</p>
-              : <p class="ms-2"> {nombre}</p>}
+              : <p className="ms-2"> {nombre}</p>}
 
           </Form>
         </div>
-        <div class="col-3 text-end">
+        <div className="col-3 text-end">
           <Button onClick={handleEliminar}><RiDeleteBin5Fill /></Button>
         </div>
       </div>

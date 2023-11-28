@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import '../../src/App.css'
-
+import Swal from 'sweetalert2';
+import { useEffect } from 'react';
 /* 
 Componente de Formulario (TaskForm):
 Este componente contendrá un formulario para agregar nuevas tareas.
@@ -13,6 +14,7 @@ la lista.
 */
 
 function TaskForm({ agregarTarea }) {
+ 
 
   const [tarea, setTarea] = useState('')
 
@@ -23,15 +25,20 @@ function TaskForm({ agregarTarea }) {
   const onSubmit = (e) => {
 
     if (tarea === "") {
-      alert("Debe ingresar una tarea antes de agregar")
-      return
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Debes agregar una tarea",
+      });
+      e.preventDefault();
+      return;
     }
 
     //envio de la nueva tarea al componente principal
     agregarTarea(tarea)
 
     /*se borra el input al agregar tarea*/
-    e.preventDefault()
+    e.preventDefault();
     setTarea('')
   }
 
