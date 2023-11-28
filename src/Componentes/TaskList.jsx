@@ -16,14 +16,19 @@ Estos eventos deberán modificar el estado principal (tasks)
 */
 
 //El componente recibe el arreglo y las funciones para actualizar y eliminar
-function TaskList({ arreglo, onActualizarTarea, onEliminarTarea }) {
+function TaskList({ arreglo, onActualizarTarea, onEliminarTarea, onEditarTarea}) {
 
     //utilizamos "Tareas" para enviar las propiedades a TaskItem y listar las tareas individuales posteriormente con un ListGroup
-    const Tareas = ({ id, nombre, completado }) => {
+    const Tareas = ({ id, nombre, completado, editarTarea }) => {
 
         return (
             <ListGroup.Item >
-                <TaskItem id={id} nombre={nombre} completado={completado} actualizarTarea={onActualizarTarea} eliminarTarea={onEliminarTarea} />
+                <TaskItem id={id} 
+                nombre={nombre} 
+                completado={completado} 
+                actualizarTarea={onActualizarTarea} 
+                eliminarTarea={onEliminarTarea} 
+                editarTarea={onEditarTarea} />
             </ListGroup.Item >
         )
     }

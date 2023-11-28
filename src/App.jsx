@@ -65,11 +65,20 @@ function App() {
   }, []);
 
 
+  const onEditarTarea = (id, nuevoNombre) => {
+    console.log(nuevoNombre);
+    const nuevasTareas = arreglo.map((tarea) =>
+      tarea.id === id ? { ...tarea, nombre: nuevoNombre } : tarea
+    );
+    console.log(nuevasTareas);
+    actualizarYGuardar(nuevasTareas);
+  };
+
   return (
     <>
       <h3>Lista de Tareas</h3>
       <TaskForm agregarTarea={onAgregarTarea} />
-      <TaskList arreglo={arreglo} onActualizarTarea={onActualizarTarea} onEliminarTarea={OnEliminarTarea} />
+      <TaskList arreglo={arreglo} onActualizarTarea={onActualizarTarea} onEliminarTarea={OnEliminarTarea} onEditarTarea={onEditarTarea}/>
     </>
   )
 }
