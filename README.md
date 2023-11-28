@@ -1,8 +1,24 @@
-# React + Vite
+# Proyecto final grupal Argentina Programa - UTN - React.js
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Currently, two official plugins are available:
+## Integrantes del grupo <!-- Faltaria en numero de equipo -->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    Sergio Cardozo
+    Nidia Figueroa
+    Ezequiel Orquera
+    Gabriel Kamimura
+
+### Propósito del proyecto
+
+    El proyecto tiene como fin integrar los conocimientos teóricos y prácticos adquiridos durante el desarrollo del curso Argentina Programa - Reack js, junto a la Universidad Tecnológica Nacional (UTN), y favorecer el trabajo en equipo.
+
+ ### Herramientas a instalar
+    
+    node
+    create-react-app
+    react-switch
+
+#### Deploy de la aplicación
+
+Pueden visualizar una demo de la [Aplicación](https://tp-react-vite-one.vercel.app/).

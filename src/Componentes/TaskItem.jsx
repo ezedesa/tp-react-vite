@@ -90,10 +90,12 @@ export const TaskItem = ({ id, nombre, completado, actualizarTarea, eliminarTare
             </Form>
           )}
         </div>
+        {!modoEdicion && (
         <div className="col-3 d-flex align-items-center">
           <Button onClick={() => activarEdicion()}><CiEdit /></Button>
           <Button onClick={handleEliminar}><RiDeleteBin5Fill /></Button>
         </div>
+        )}
       </div>
     </>
   )
