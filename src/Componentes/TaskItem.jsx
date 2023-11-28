@@ -41,6 +41,15 @@ export const TaskItem = ({ id, nombre, completado, actualizarTarea, eliminarTare
   };
   
   const handleEditarNombre = () => {
+    if (tarea === "") {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Debes agregar una tarea",
+      });
+      e.preventDefault();
+      return;
+    }
     // Realiza la edición del nombre
     editarTarea(id, nuevoNombre)
     // Salir del modo de edición
