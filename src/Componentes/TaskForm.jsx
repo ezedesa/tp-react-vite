@@ -1,15 +1,47 @@
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
-import '../../src/App.css';
+import { useState } from 'react'
+import '../../src/App.css'
 
-function TaskForm() {
+/* 
+Componente de Formulario (TaskForm):
+Este componente contendrá un formulario para agregar nuevas tareas.
+Utilizará el estado local para gestionar la entrada del usuario y enviará la nueva tarea a
+la lista principal.
+
+- Eventos en Componente de Formulario (TaskForm):
+Implementar eventos para gestionar la entrada del usuario y agregar nuevas tareas a
+la lista.
+*/
+
+function TaskForm({ agregarTarea }) {
+
+  const [tarea, setTarea] = useState('')
+
+  const onInputChange = (e) => {
+    setTarea(e.target.value)
+  }
+
+  const onSubmit = (e) => {
+
+    if (tarea === "") {
+      alert("Debe ingresar una tarea antes de agregar")
+      return
+    }
+
+    //envio de la nueva tarea al componente principal
+    agregarTarea(tarea)
+
+    /*se borra el input al agregar tarea*/
+    e.preventDefault()
+    setTarea('')
+  }
+
+
   return (
     <>
-      <InputGroup className="mb-3">
-        <InputGroup.Text id="inputGroup-sizing-default" placeholder='Introduce una tarea'>Task</InputGroup.Text>
-        <Form.Control aria-label="Default" aria-describedby="inputGroup-sizing-default"/>
-        <input type="submit" value="Add task" className='btn'/>
-      </InputGroup>
+      <form onSubmit={onSubmit}>
+        <input type="text" placeholder="ingresa una tarea" onChange={onInputChange} value={tarea} />
+        <input type="submit" value="Agregar" className='btn' />
+      </form>
     </>
   );
 }

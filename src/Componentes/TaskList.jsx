@@ -1,44 +1,38 @@
 import ListGroup from 'react-bootstrap/ListGroup';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import { RiDeleteBin5Fill } from "react-icons/ri";
 import '../../src/App.css';
 import { TaskItem } from './TaskItem';
-import { useState } from 'react';
 
+/* 
+Componente de Lista de Tareas (TaskList):
+Este componente deberá mostrar la lista de tareas.
+Recibirá como propiedades la lista de tareas y funciones para gestionar eventos
+relacionados con las tareas (por ejemplo, marcar como completada, eliminar, etc.).
+Cada tarea debe representarse mediante un componente TaskItem. 
 
-function TaskList() {
+- Eventos en Componente de Lista (TaskList):
+Implementar eventos que permitan al usuario interactuar con cada tarea (marcar
+como completada, eliminar, etc.).
+Estos eventos deberán modificar el estado principal (tasks)
+*/
 
-  //useSate para controlar el cambio del valor del switch preseteado en falso
-  const [estado, setEstado] = useState(false)
-  //handleSwitch setea el valor del estado a uno diferente al estado previo
-  const handleSwitch = () => {
-    setEstado (previousState => !previousState); 
-  }
+//El componente recibe el arreglo y las funciones para actualizar y eliminar
+function TaskList({ arreglo, onActualizarTarea, onEliminarTarea }) {
+
+    //utilizamos "Tareas" para enviar las propiedades a TaskItem y listar las tareas individuales posteriormente con un ListGroup
+    const Tareas = ({ id, nombre, completado }) => {
+
+        return (
+            <ListGroup.Item >
+                <TaskItem id={id} nombre={nombre} completado={completado} actualizarTarea={onActualizarTarea} eliminarTarea={onEliminarTarea} />
+            </ListGroup.Item >
+        )
+    }
 
     return (
         <>
-
             <ListGroup variant="flush" className='mt-5'>
-                <ListGroup.Item >
-                    <Form className='d-flex justify-content-between align-items-center'>
-                        <Form.Check 
-                        type='switch' 
-                        id='custom.switch' 
-                        className='mr-3' 
-                        //Uso de la funcion handleSwitch el mover el switch
-                        onChange={handleSwitch}
-                        value={estado} />
-                    
-                    {/* Pasa las props 'tarea' y el valor del estado al componente TaskItem y lo muestra en la lista */}
-                    <TaskItem tarea= "ejemplo de tarea" estado= {estado}/>
-                    <Button>
-                    <RiDeleteBin5Fill />
-
-                    </Button>
-                    </Form>   
-                </ListGroup.Item>
-
+                {/* Recorrido del arreglo para mostrar las tareas en una lista */}
+                {arreglo.map((item) => (<Tareas key={item.id} id={item.id} nombre={item.nombre} completado={item.completado} actualizarTarea={onActualizarTarea} />))}
             </ListGroup>
         </>
     );
