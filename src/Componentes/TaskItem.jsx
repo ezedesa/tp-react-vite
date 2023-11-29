@@ -83,9 +83,9 @@ export const TaskItem = ({ id, nombre, completado, actualizarTarea, eliminarTare
                 checked={estado}
               />
               {estado ? (
-                <p className="text-decoration-line-through ms-2"> {nombre}</p>
+                <p className="text-decoration-line-through ms-2 text-break"> {nombre}</p>
               ) : (
-                <p className="ms-2"> {nombre}</p>
+                <p className="ms-2 text-break"> {nombre}</p>
               )}
             </Form>
           )}
