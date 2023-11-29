@@ -16,7 +16,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
  ### Herramientas a instalar
     
     node
-    create-react-app
+    vite
     react-switch
 
 #### Deploy de la aplicación
