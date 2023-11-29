@@ -4,6 +4,7 @@ import { RiDeleteBin5Fill } from "react-icons/ri";
 import { CiEdit } from "react-icons/ci";
 import { useState } from 'react'
 
+
 /* 
 Componente de Tarea (TaskItem):
 Este componente deberá representar individualmente una tarea.
@@ -48,7 +49,7 @@ export const TaskItem = ({ id, nombre, completado, actualizarTarea, eliminarTare
   return (
     <>
       <div className="row">
-        <div className="col-7">
+        <div>
           {modoEdicion ? (
             <Form className='d-flex justify-content-start align-items-center'>
               <Form.Control
@@ -57,12 +58,14 @@ export const TaskItem = ({ id, nombre, completado, actualizarTarea, eliminarTare
                 onChange={(e) => setNuevoNombre(e.target.value)}
                 autoFocus
               />
-              <Button variant="success" onClick={() => handleEditarNombre()}>
+              <div className="container">
+              <Button onClick={() => handleEditarNombre()} variant="primary" className="float-left">
                 Guardar
               </Button>
-              <Button variant="danger" onClick={() => cancelarEdicion()}>
+              <Button variant="primary" className="float-left" onClick={() => cancelarEdicion()}>
                 Cancelar
               </Button>
+              </div>
             </Form>
           ) : (
             <Form className='d-flex justify-content-start align-items-center'>
@@ -82,9 +85,9 @@ export const TaskItem = ({ id, nombre, completado, actualizarTarea, eliminarTare
           )}
         </div>
         {!modoEdicion && (
-        <div className="col-3 d-flex align-items-center">
-          <Button onClick={() => activarEdicion()}><CiEdit /></Button>
-          <Button onClick={handleEliminar}><RiDeleteBin5Fill /></Button>
+        <div className="container">
+          <Button onClick={() => activarEdicion()} variant="primary" className="float-left" title='Editar'><CiEdit /></Button>
+          <Button onClick={handleEliminar} variant="danger" className="float-left" title='Eliminar'><RiDeleteBin5Fill /></Button>
         </div>
         )}
       </div>
