@@ -6,11 +6,18 @@
   background-image: linear-gradient(rgba(248, 248, 244, 0.5), rgb(54, 56, 52));
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 950px) {
+  #root {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
   #root {
     width: 90%;
   }
 }
+
 
 body{
   background: #404344;
