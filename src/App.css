@@ -2,10 +2,16 @@
   margin: 0 auto;
   padding: 1.5rem;
   text-align: center;
+  width: 25%;
   background-image: linear-gradient(rgba(248, 248, 244, 0.5), rgb(54, 56, 52));
-
-  
 }
+
+@media only screen and (max-width: 700px) {
+  #root {
+    width: 90%;
+  }
+}
+
 body{
   background: #404344;
   animation: myback 10s infinite both;
