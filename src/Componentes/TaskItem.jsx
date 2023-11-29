@@ -20,6 +20,7 @@ export const TaskItem = ({ id, nombre, completado, actualizarTarea, eliminarTare
   const [modoEdicion, setModoEdicion] = useState(false);
   const [nuevoNombre, setNuevoNombre] = useState(nombre);
 
+
   //handleSwitch setea el valor del estado a uno diferente al estado previo y envia esta informacion a la funcion actualizar tarea en TaskList
   const handleSwitch = () => {
     const nuevoEstado = !estado
@@ -41,9 +42,12 @@ export const TaskItem = ({ id, nombre, completado, actualizarTarea, eliminarTare
     setNuevoNombre(nombre); // Restaurar el nombre original al cancelar
   };
   
+
   const handleEditarNombre = () => {
+    
     // Realiza la edición del nombre
     editarTarea(id, nuevoNombre)
+  
     // Salir del modo de edición
   };
   return (
@@ -57,6 +61,8 @@ export const TaskItem = ({ id, nombre, completado, actualizarTarea, eliminarTare
                 value={nuevoNombre}
                 onChange={(e) => setNuevoNombre(e.target.value)}
                 autoFocus
+                maxLength={150}
+                placeholder="Máximo 150 caracteres"
               />
               <div className="container">
               <Button onClick={() => handleEditarNombre()} variant="primary" className="float-left">
