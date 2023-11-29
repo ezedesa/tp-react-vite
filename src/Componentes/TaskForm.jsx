@@ -46,7 +46,7 @@ function TaskForm({ agregarTarea }) {
   return (
     <>
       <form onSubmit={onSubmit}>
-        <input type="text" placeholder="ingresa una tarea" onChange={onInputChange} value={tarea} />
+        <input type="text" placeholder="ingresa una tarea" onChange={onInputChange} value={tarea} maxLength={150} />
         <input type="submit" value="Agregar" className='btn' />
       </form>
     </>
